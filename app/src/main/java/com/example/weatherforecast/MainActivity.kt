@@ -2,11 +2,9 @@ package com.example.weatherforecast
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import androidx.lifecycle.ViewModelProvider
+import android.widget.LinearLayout
 import com.example.weatherforecast.databinding.ActivityMainBinding
-import com.example.weatherforecast.weatherlist.WeatherFragment
-import com.example.weatherforecast.weatherlist.WeatherListViewModel
+import com.example.weatherforecast.view.details.weatherlist.WeatherListFragment
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -17,8 +15,9 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         if(savedInstanceState==null){
-            supportFragmentManager.beginTransaction().replace(R.id.container, WeatherFragment.newInstance()).commit()
-    }
+            supportFragmentManager.beginTransaction().replace(R.id.container,WeatherListFragment.newInstance()).commit()
+        }
+
 
     }
 

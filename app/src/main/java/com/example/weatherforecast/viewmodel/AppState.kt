@@ -1,12 +1,12 @@
 package com.example.weatherforecast.viewmodel
 
-sealed class AppState {
+import com.example.weatherforecast.domen.Weather
 
-    data class Success(val weatherData: Any) : AppState()
+sealed class AppState {
+    data class SuccessOne(val weatherData: Weather) : AppState()
+    data class SuccessMulti(val weatherList: List<Weather>) : AppState()
     data class Error(val error: Throwable) : AppState()
     object Loading : AppState()
 }
 
-class AppStateSecond: AppState(){
 
-}
